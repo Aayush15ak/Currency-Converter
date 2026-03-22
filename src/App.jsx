@@ -10,12 +10,15 @@ function App() {
   const options = Object.keys(info)
   const convertedamount = amount * (info[to] || 0);
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+    <div className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
       style={{
-        backgroundImage: `url(${bgImage})`
+      backgroundImage: `url(${bgImage})`
       }}
     >
+      <h1 className="text-4xl font-bold text-white mb-6">
+        Currency Converter
+      </h1>
+    
       
       <div className="w-full max-w-md space-y-4 bg-white/20 backdrop-blur-md p-6 rounded-xl border border-white/30">
         <InputBox
