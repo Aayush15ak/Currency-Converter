@@ -23,35 +23,37 @@ function InputBox({
     newcurr
 }) {
   return (
-    <div className="bg-zinc-900 border border-white/30 p-4 rounded-xl flex justify-between items-center">
+    <div className="bg-white/20 backdrop-blur-md border border-white/30 p-4 rounded-xl flex justify-between items-center shadow-lg">
 
-      <div className="flex flex-col">
-        <label className="text-gray-300 text-sm mb-1">
-          {label}
-        </label>
+        <div className="flex flex-col">
+            <label className="text-black text-sm mb-1">
+            {label}
+            </label>
 
-        <input
-          type="number"
-          value={amount}
-          placeholder="Amount"
-          className="outline-none bg-transparent text-white text-lg"
-          onChange={(e)=>changeAmount(e.target.value)}
-        />
-      </div>
+            <input
+            type="number"
+            value={amount}
+            placeholder="Amount"
+            className="outline-none bg-white/30 text-black placeholder-black/60 px-3 py-2 rounded-md backdrop-blur-md border border-white/30"
+            onChange={(e) => changeAmount(e.target.value)}
+            />
+        </div>
 
-      <div className="flex flex-col items-end">
-        <p className="text-gray-300 text-sm mb-1">Currency</p>
+        <div className="flex flex-col items-end">
+            <p className="text-black text-sm mb-1">Currency</p>
 
-        <select 
-        className="bg-zinc-800 text-white px-3 py-1 rounded-md outline-none border border-white/20"
-        value={newcurr}
-        onChange={(e)=>currChanged(e.target.value)}
-        >
-          {currencyOptions.map((currencyName)=>(
-            <option key={currencyName} value={currencyName}>{currencyName}</option>
-          ))} 
-        </select>
-      </div>
+            <select 
+            className="bg-white/30 text-black px-3 py-2 rounded-md outline-none backdrop-blur-md border border-white/30"
+            value={newcurr}
+            onChange={(e) => currChanged(e.target.value)}
+            >
+            {currencyOptions.map((currencyName) => (
+                <option key={currencyName} value={currencyName}>
+                {currencyName}
+                </option>
+            ))}
+            </select>
+        </div>
 
     </div>
   );

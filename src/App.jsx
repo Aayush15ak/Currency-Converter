@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import InputBox, { useInfo } from "./components/InputBox";
-
-
+import bgImage from "./components/background1.jpg"; 
 
 function App() {
   const [amount, setamount] = useState(0)
@@ -11,8 +10,14 @@ function App() {
   const options = Object.keys(info)
   const convertedamount = amount * (info[to] || 0);
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <div className="w-100 space-y-4">
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${bgImage})`
+      }}
+    >
+      
+      <div className="w-full max-w-md space-y-4 bg-white/20 backdrop-blur-md p-6 rounded-xl border border-white/30">
         <InputBox
           label="From"
           amount={amount}
